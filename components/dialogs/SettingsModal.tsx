@@ -388,7 +388,7 @@ export function SettingsModal({ open, onClose }: { open: boolean, onClose: () =>
         </Section>
 
 
-        <Section>
+        {/* <Section>
           <Stack direction='column' sx={{ gap: uniformGap }}>
 
             <FormControl orientation='horizontal' sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
@@ -421,7 +421,6 @@ export function SettingsModal({ open, onClose }: { open: boolean, onClose: () =>
                 <FormHelperText>{zenMode === 'clean' ? 'Show senders' : 'Hide sender and menus'}</FormHelperText>
               </Box>
               <RadioGroup orientation='horizontal' value={zenMode} onChange={handleZenModeChange}>
-                {/*<Radio value='clean' label={<Face6Icon sx={{ width: 24, height: 24, mt: -0.25 }} />} />*/}
                 <Radio value='clean' label='Clean' />
                 <Radio value='cleaner' label='Empty' />
               </RadioGroup>
@@ -448,13 +447,13 @@ export function SettingsModal({ open, onClose }: { open: boolean, onClose: () =>
             </FormControl>
 
           </Stack>
-        </Section>
+        </Section> */}
 
         {/* ElevenLabs */}
-        <ElevenLabsSection />
+        {/* <ElevenLabsSection /> */}
 
         {/* Advanced Settings */}
-        <AdvancedSection />
+        {/* <AdvancedSection /> */}
 
         <Box sx={{ mt: 4, display: 'flex', justifyContent: 'flex-end' }}>
           <Button variant='solid' color={isValidOpenAIKey ? 'primary' : 'neutral'} onClick={onClose}>

@@ -23,6 +23,7 @@ export default function MyApp({ Component, emotionCache = clientSideEmotionCache
     <CacheProvider value={emotionCache}>
       <Head>
         <meta name='viewport' content='initial-scale=1, width=device-width' />
+        <title>AI Tariq 🤖</title>
       </Head>
       {/* Rect-query provider */}
       <QueryClientProvider client={queryClient}>
