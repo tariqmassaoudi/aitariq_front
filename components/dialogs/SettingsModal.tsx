@@ -351,6 +351,7 @@ export function SettingsModal({ open, onClose }: { open: boolean, onClose: () =>
   const isValidOpenAIKey = isValidOpenAIApiKey(apiKey);
 
   const hideOnMobile = { display: { xs: 'none', md: 'flex' } };
+  const requireUserKeyOpenAI=false
 
   return (
     <Modal open={open} onClose={onClose}>
@@ -381,7 +382,7 @@ export function SettingsModal({ open, onClose }: { open: boolean, onClose: () =>
               {requireUserKeyOpenAI
                 ? <><Link level='body2' href='https://platform.openai.com/account/api-keys' target='_blank'>Create Key</Link>, then apply to
                   the <Link level='body2' href='https://openai.com/waitlist/gpt-4-api' target='_blank'>GPT-4 waitlist</Link></>
-                : `This key will take precedence over the server's.`} <Link level='body2' href='https://platform.openai.com/account/usage' target='_blank'>Check usage here</Link>.
+                : <div>This key is optional until I'm out of free trial credits 😄 <br/> If app doesn't work means trial is over and you need to assign a key! <br/></div>  }
             </FormHelperText>
           </FormControl>
 

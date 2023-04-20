@@ -16,30 +16,36 @@ export async function streamAssistantMessage(
   onFirstParagraph?: (firstParagraph: string) => void,
 ) {
 
-  const payload: ApiChatInput = {
-    api: {
-      ...(apiKey && { apiKey }),
-      ...(apiHost && { apiHost }),
-      ...(apiOrganizationId && { apiOrganizationId }),
-    },
-    model: chatModelId,
-    messages: history.map(({ role, text }) => ({
-      role: role,
-      content: text,
-    })),
-    temperature: modelTemperature,
-    max_tokens: modelMaxResponseTokens,
-  };
-  console.log(history)
+  // const payload: ApiChatInput = {
+  //   api: {
+  //     ...(apiKey && { apiKey }),
+  //     ...(apiHost && { apiHost }),
+  //     ...(apiOrganizationId && { apiOrganizationId }),
+  //   },
+  //   model: chatModelId,
+  //   messages: history.map(({ role, text }) => ({
+  //     role: role,
+  //     content: text,
+  //   })),
+  //   temperature: modelTemperature,
+  //   max_tokens: modelMaxResponseTokens,
+  // };
 
   try {
-
+    let payload={}
+    if(apiKey){
+     payload={"message": history.slice(-10).map(({text,sender})=>sender+": "+text).join('\n'),"openaikey":apiKey}
+    }else{
+     payload={"message": history.slice(-10).map(({text,sender})=>sender+": "+text).join('\n')}
+    }
+    
     const response = await fetch('https://3.89.242.109/stream', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({"message": history.slice(-10).map(({text,sender})=>sender+": "+text).join('\n')}),
+      body: JSON.stringify(payload),
       signal: abortSignal,
     });
+  
 
     if (response.body) {
       const reader = response.body.getReader();
