@@ -51,14 +51,14 @@ export const SystemPurposes: { [key in SystemPurposeId]: SystemPurposeData } = {
   Generic: {
     title: 'Default',
     description: 'Helps you think',
-    systemMessage: 'You are ChatGPT, a large language model trained by OpenAI, based on the GPT-4 architecture.\nKnowledge cutoff: 2021-09\nCurrent date: {{Today}}',
-    symbol: '🧠',
+    systemMessage: '',
+    symbol: '🤖',
     examples: ['help me plan a trip to Japan', 'what is the meaning of life?', 'how do I get a job at OpenAI?', 'what are some healthy meal ideas?'],
   },
   Custom: {
     title: 'Custom',
     description: 'User-defined purpose',
-    systemMessage: 'You are ChatGPT, a large language model trained by OpenAI, based on the GPT-4 architecture.\nCurrent date: {{Today}}',
+    systemMessage: '',
     symbol: '✨',
   },
 };
@@ -80,7 +80,7 @@ type ChatModelData = {
 export const ChatModels: { [key in ChatModelId]: ChatModelData } = {
   'gpt-4': {
     description: 'Most insightful, larger problems, but slow, expensive, and may be unavailable',
-    title: 'GPT-4',
+    title: 'Tariq',
     fullName: 'GPT-4',
     contextWindowSize: 8192,
     tradeoff: 'Precise, slow and expensive',

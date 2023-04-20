@@ -2,13 +2,24 @@ import * as React from 'react';
 import { shallow } from 'zustand/shallow';
 
 import { Box, Button, Checkbox, Grid, IconButton, Input, Stack, Textarea, Typography, useTheme } from '@mui/joy';
+import AspectRatio from '@mui/joy/AspectRatio';
+
 import ClearIcon from '@mui/icons-material/Clear';
 import SearchIcon from '@mui/icons-material/Search';
+import CardOverflow from '@mui/joy/CardOverflow';
+import Divider from '@mui/joy/Divider';
 
 import { SystemPurposeId, SystemPurposes } from '@/lib/data';
 import { useChatStore } from '@/lib/stores/store-chats';
 import { usePurposeStore } from '@/lib/stores/store-purposes';
 import { useSettingsStore } from '@/lib/stores/store-settings';
+
+
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+
+
+
 
 
 // Constants for tile sizes / grid width - breakpoints need to be computed here to work around
@@ -110,9 +121,36 @@ export function PurposeSelector(props: { conversationId: string, runExample: (ex
 
   const selectedPurpose = purposeIDs.length ? (SystemPurposes[systemPurposeId] ?? null) : null;
   const selectedExample = selectedPurpose?.examples && getRandomElement(selectedPurpose.examples) || null;
-
+  const bull = (
+    <Box
+      component="span"
+      sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
+    >
+      •
+    </Box>
+  );
+  
   return <>
+    <Card variant="outlined" sx={{ margin:"auto" }}>
+      <CardOverflow>
+        <AspectRatio ratio="2.5">
+          <img
+            src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/90b0cf78-3356-43b3-a7a2-8e6bf0e85ef1/db7n1vd-f5675e80-f071-4fd0-bf61-8bc801801d90.jpg/v1/fill/w_1273,h_628,q_70,strp/gone_fishing_by_guweiz_db7n1vd-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjUwIiwicGF0aCI6IlwvZlwvOTBiMGNmNzgtMzM1Ni00M2IzLWE3YTItOGU2YmYwZTg1ZWYxXC9kYjduMXZkLWY1Njc1ZTgwLWYwNzEtNGZkMC1iZjYxLThiYzgwMTgwMWQ5MC5qcGciLCJ3aWR0aCI6Ijw9MTMxOCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.atbyC5HymT15b2SQuPiSeQgkbLP4_MCZZCsZAvb0Jn8"
+            srcSet="https://images.unsplash.com/photo-1532614338840-ab30cf10ed36?auto=format&fit=crop&w=318&dpr=2 2x"
+            loading="lazy"
+            alt=""
+          />
+        </AspectRatio>
+      </CardOverflow>
+      <Typography level="body1" sx={{ fontSize: 'md', mt: 2 }}>
+      AI Tariq🤖 is a custom chatbot made to simulate Human Tariq👨's personality<br/>
+    Human Tariq👨 is NOT responsible for anything AI Tariq🤖 says
+      </Typography>
+  
+      
+    </Card>
 
+{/* 
     {showPurposeFinder && <Box sx={{ p: 2 * tileSpacing }}>
       <Input
         fullWidth
@@ -221,7 +259,7 @@ export function PurposeSelector(props: { conversationId: string, runExample: (ex
 
       </Box>
 
-    </Stack>
+    </Stack> */}
 
   </>;
 }

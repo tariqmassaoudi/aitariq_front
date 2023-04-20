@@ -124,7 +124,7 @@ export function ApplicationBar(props: {
         </Badge>
       </IconButton>
 
-      <Stack direction='row' sx={{ my: 'auto' }}>
+      {/* <Stack direction='row' sx={{ my: 'auto' }}>
 
         {chatModelId && <AppBarDropdown items={ChatModels} value={chatModelId} onChange={handleChatModelChange} />}
 
@@ -133,7 +133,8 @@ export function ApplicationBar(props: {
             : <AppBarDropdownWithSymbol items={SystemPurposes} value={systemPurposeId} onChange={handleSystemPurposeChange} />
         )}
 
-      </Stack>
+      </Stack> */}
+      <div style={{margin: "auto"}}>AI Tariq 🤖</div>
 
       <IconButton variant='plain' onClick={event => setActionsMenuAnchor(event.currentTarget)}>
         <MoreVertIcon />
@@ -168,27 +169,23 @@ export function ApplicationBar(props: {
         Settings
       </MenuItem>
 
-      <ListDivider />
+      {/* <ListDivider />
 
       <MenuItem disabled={!props.conversationId || isConversationEmpty} onClick={handleConversationDownload}>
         <ListItemDecorator>
-          {/*<Badge size='sm' color='danger'>*/}
           <FileDownloadIcon />
-          {/*</Badge>*/}
         </ListItemDecorator>
         Download JSON
       </MenuItem>
 
       <MenuItem disabled={!props.conversationId || isConversationEmpty} onClick={handleConversationPublish}>
         <ListItemDecorator>
-          {/*<Badge size='sm' color='primary'>*/}
           <ExitToAppIcon />
-          {/*</Badge>*/}
         </ListItemDecorator>
         Share via paste.gg
       </MenuItem>
 
-      <ListDivider />
+      <ListDivider /> */}
 
       <MenuItem disabled={!props.conversationId || isConversationEmpty} onClick={handleConversationClear}>
         <ListItemDecorator><ClearIcon /></ListItemDecorator>

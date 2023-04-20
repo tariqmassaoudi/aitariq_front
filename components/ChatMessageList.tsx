@@ -45,7 +45,7 @@ export function ChatMessageList(props: { conversationId: string | null, onRestar
   // when there are no messages, show the purpose selector
   if (!filteredMessages.length)
     return props.conversationId ? (
-      <Box sx={props.sx || {}}>
+      <Box sx={{margin:"auto"}|| {}}>
         <PurposeSelector conversationId={props.conversationId} runExample={handleRunPurposeExample} />
       </Box>
     ) : null;

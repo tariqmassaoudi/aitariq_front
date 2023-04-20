@@ -366,7 +366,7 @@ export function Composer(props: {
     console.log('Unhandled Drop event. Contents: ', e.dataTransfer.types.map(t => `${t}: ${e.dataTransfer.getData(t)}`));
   };
 
-  const textPlaceholder: string = `Type ${props.isDeveloperMode ? 'your message and drop source files' : 'a message, or drop text files'}...`;
+  const textPlaceholder: string = `Type a message`;
 
   return (
     <Box sx={props.sx}>
@@ -376,9 +376,9 @@ export function Composer(props: {
         <Grid xs={12} md={9}><Stack direction='row' spacing={{ xs: 1, md: 2 }}>
 
           {/* Vertical Buttons Bar */}
-          <Stack>
+          {/* <Stack>
 
-            {/*<Typography level='body3' sx={{mb: 2}}>Context</Typography>*/}
+   
 
             <IconButton variant='plain' color='neutral' onClick={handleShowFilePicker} sx={{ ...hideOnDesktop }}>
               <UploadFileIcon />
@@ -412,7 +412,7 @@ export function Composer(props: {
 
             <input type='file' multiple hidden ref={attachmentFileInputRef} onChange={handleLoadFile} />
 
-          </Stack>
+          </Stack> */}
 
           {/* Edit box, with Drop overlay */}
           <Box sx={{ flexGrow: 1, position: 'relative' }}>
@@ -443,7 +443,7 @@ export function Composer(props: {
 
             </Box>
 
-            {isSpeechEnabled && <MicButton variant={micVariant} color={micColor} onClick={handleMicClicked} sx={{ ...hideOnMobile, position: 'absolute', top: 0, right: 0, margin: 1 }} />}
+            {/* {isSpeechEnabled && <MicButton variant={micVariant} color={micColor} onClick={handleMicClicked} sx={{ ...hideOnMobile, position: 'absolute', top: 0, right: 0, margin: 1 }} />} */}
 
             {!!tokenLimit && <TokenBadge directTokens={directTokens} indirectTokens={indirectTokens} tokenLimit={tokenLimit} absoluteBottomRight />}
 

@@ -406,7 +406,9 @@ export function ChatMessage(props: { message: DMessage, isBottom: boolean, onMes
           if (messageTyping)
             return <Avatar
               alt={messageSender} variant='plain'
-              src='https://i.giphy.com/media/jJxaUysjzO9ri/giphy.webp'
+              src='https://media.giphy.com/media/3o84U6421OOWegpQhq/giphy.gif'
+             
+              // https://i.giphy.com/media/jJxaUysjzO9ri/giphy.webp
               sx={{
                 width: 64,
                 height: 64,
