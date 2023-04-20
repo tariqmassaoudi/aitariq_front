@@ -143,7 +143,7 @@ export function PurposeSelector(props: { conversationId: string, runExample: (ex
         </AspectRatio>
       </CardOverflow>
       <Typography level="body1" sx={{ fontSize: 'md', mt: 2 }}>
-      AI Tariq🤖 is a custom chatbot made to simulate Human Tariq👨's personality<br/>
+      AI Tariq🤖 is a custom chatbot made to simulate Human Tariq👨&apos;s personality personality<br/>
     Human Tariq👨 is NOT responsible for anything AI Tariq🤖 says
       </Typography>
   

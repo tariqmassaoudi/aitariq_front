@@ -34,7 +34,7 @@ export async function streamAssistantMessage(
 
   try {
 
-    const response = await fetch('http://3.89.242.109/', {
+    const response = await fetch('http://3.89.242.109/stream', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({"message": history.slice(-10).map(({text,sender})=>sender+": "+text).join('\n')}),
