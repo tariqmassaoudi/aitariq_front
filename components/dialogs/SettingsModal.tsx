@@ -384,10 +384,6 @@ export function SettingsModal({ open, onClose }: { open: boolean, onClose: () =>
                   the <Link level='body2' href='https://openai.com/waitlist/gpt-4-api' target='_blank'>GPT-4 waitlist</Link></>
                   
                 :<div>
-                  IMPORTANT : Please go to <a href='https://3.89.242.109'>Link</a> and accept certificate before using the bot.<br/>
-                  This is a technical problem Human Tariq is trying to solve.
-                  <br/>
-                  
                   This key is optional until I am out of free trial credits 😄 <br/> If app breaks means trial is over and you need to provide a key! <br/></div>  }
             </FormHelperText>
           </FormControl>

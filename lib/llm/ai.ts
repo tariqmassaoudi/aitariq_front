@@ -39,7 +39,7 @@ export async function streamAssistantMessage(
      payload={"message": history.slice(-10).map(({text,sender})=>sender+": "+text).join('\n')}
     }
     
-    const response = await fetch('https://3.89.242.109/stream', {
+    const response = await fetch('https://wpvguc9s0b.execute-api.us-east-1.amazonaws.com/stream', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
