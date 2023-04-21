@@ -382,7 +382,7 @@ export function SettingsModal({ open, onClose }: { open: boolean, onClose: () =>
               {requireUserKeyOpenAI
                 ? <><Link level='body2' href='https://platform.openai.com/account/api-keys' target='_blank'>Create Key</Link>, then apply to
                   the <Link level='body2' href='https://openai.com/waitlist/gpt-4-api' target='_blank'>GPT-4 waitlist</Link></>
-                : <div>This key is optional until I'm out of free trial credits 😄 <br/> If app doesn't work means trial is over and you need to assign a key! <br/></div>  }
+                : <div>This key is optional until I am out of free trial credits 😄 <br/> If app breaks means trial is over and you need to provide a key! <br/></div>  }
             </FormHelperText>
           </FormControl>
 
